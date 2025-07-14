@@ -3,10 +3,7 @@
 import Image from "next/image"
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
-
-type TypewriterTextProps = {
-  texts: string[]
-}
+import type { TypewriterTextProps } from "@/types";
 
 const TypewriterText = ({ texts }: TypewriterTextProps) => {
   const [displayText, setDisplayText] = useState("")
@@ -91,7 +88,7 @@ export default function Hero() {
               <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight inline-flex items-baseline">
                 <WavingHand />
                 <span>
-                  Hi, I'm{" "}
+                  Hi, I&apos;m{" "}
                   <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                     Nicolash
                   </span>
@@ -99,7 +96,7 @@ export default function Hero() {
               </h1>
 
               <h2 className="text-2xl lg:text-3xl text-gray-600 font-medium leading-relaxed">
-                I'm a <TypewriterText texts={typedItems} />
+                I&apos;m a <TypewriterText texts={typedItems} />
               </h2>
             </div>
 

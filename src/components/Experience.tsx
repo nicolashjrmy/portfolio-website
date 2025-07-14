@@ -1,7 +1,8 @@
 "use client"
 
-import { Briefcase, GraduationCap, MapPin, Calendar } from "lucide-react"
+import { Briefcase, GraduationCap, MapPin} from "lucide-react"
 import { useScrollAnimation } from "@/hooks/useScrollAnimation"
+import {TimelineItemType} from "@/types"
 
 export default function Experience() {
   const { ref: sectionRef, isVisible: sectionVisible } = useScrollAnimation()
@@ -76,7 +77,7 @@ export default function Experience() {
     index,
     isLast,
     isVisible,
-  }: { item: any; index: number; isLast: boolean; isVisible: boolean }) => (
+  }: { item: TimelineItemType; index: number; isLast: boolean; isVisible: boolean }) => (
     <div className="relative flex items-start group mb-12">
       {/* Timeline line */}
       {!isLast && <div className="absolute left-8 top-20 w-0.5 h-20 bg-gradient-to-b from-gray-300 to-gray-100"></div>}

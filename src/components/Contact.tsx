@@ -7,7 +7,7 @@ export default function Contact() {
         <div className="w-16 h-16 rounded-full bg-gray-100 mx-auto mb-6 flex items-center justify-center">
           <span className="text-2xl">👨‍💻</span>
         </div>
-        <h2 className="text-3xl font-bold text-gray-900 mb-4">Let's stay in touch</h2>
+        <h2 className="text-3xl font-bold text-gray-900 mb-4">Let&apos;s stay in touch</h2>
         <p className="text-gray-600 max-w-2xl mx-auto">
           Interested in backend engineering insights, collaboration opportunities, or just want to chat about
           technology? My inbox is always open.
@@ -51,7 +51,7 @@ export default function Contact() {
 
         <div className="pt-8 border-t border-gray-100">
           <div className="flex justify-between items-center text-sm text-gray-500">
-            <span>I'm Alex</span>
+            <span>I&apos;m Alex</span>
             <span>Senior Backend Engineer</span>
             <a href="#home" className="hover:text-gray-700">
               Back to Top ↑
