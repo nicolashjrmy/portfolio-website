@@ -1,49 +1,45 @@
 "use client"
+
 import Image from "next/image"
-import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react"
+import { motion } from "framer-motion"
 
 type TypewriterTextProps = {
-  texts: string[];
-};
+  texts: string[]
+}
 
 const TypewriterText = ({ texts }: TypewriterTextProps) => {
-  const [displayText, setDisplayText] = useState("");
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isTyping, setIsTyping] = useState(true);
+  const [displayText, setDisplayText] = useState("")
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [isTyping, setIsTyping] = useState(true)
 
   useEffect(() => {
     const typingInterval = setInterval(() => {
       if (isTyping) {
-        const currentText = texts[currentIndex];
+        const currentText = texts[currentIndex]
         if (displayText.length < currentText.length) {
-          setDisplayText((prevText) => currentText.slice(0, prevText.length + 1));
+          setDisplayText((prevText) => currentText.slice(0, prevText.length + 1))
         } else {
-          setIsTyping(false);
-          clearInterval(typingInterval);
+          setIsTyping(false)
+          clearInterval(typingInterval)
           setTimeout(() => {
-            setIsTyping(true);
-            setDisplayText("");
-            setCurrentIndex((prevIndex) => (prevIndex + 1) % texts.length);
-          }, 2000); 
+            setIsTyping(true)
+            setDisplayText("")
+            setCurrentIndex((prevIndex) => (prevIndex + 1) % texts.length)
+          }, 2000)
         }
       }
-    }, 100); 
+    }, 100)
 
     return () => {
-      clearInterval(typingInterval);
-    };
-  }, [currentIndex, isTyping, texts, displayText]);
+      clearInterval(typingInterval)
+    }
+  }, [currentIndex, isTyping, texts, displayText])
 
   return (
     <span className="inline-block text-[#915EFF] font-bold">
-      {displayText.split('').map((char, index) => (
-        <motion.span
-          key={index}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.1 }}
-        >
+      {displayText.split("").map((char, index) => (
+        <motion.span key={index} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.1 }}>
           {char}
         </motion.span>
       ))}
@@ -51,27 +47,26 @@ const TypewriterText = ({ texts }: TypewriterTextProps) => {
         <motion.span
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, repeat: Infinity, repeatType: "reverse" }}
+          transition={{ duration: 0.5, repeat: Number.POSITIVE_INFINITY, repeatType: "reverse" }}
           className="inline-block ml-1"
         >
           |
         </motion.span>
       )}
     </span>
-  );
-};
+  )
+}
 
 const WavingHand = () => {
   return (
-    <img 
-      src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/1f44b.png" 
+    <img
+      src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/1f44b.png"
       alt="Waving Hand"
-      className="wave-emoji"
-      style={{ display: 'inline-block', marginLeft: '10px', width: '50px', height: '50px' }}
+      className="wave-emoji mr-3 inline-block"
+      style={{ display: "inline-block", width: "45px", height: "45px", verticalAlign: "baseline" }}
     />
-  );
-};
-
+  )
+}
 
 export default function Hero() {
   const typedItems = ["Software Developer", "Backend Engineer", "Computer Enthusiast", "Casual Dota Enjoyer"]
@@ -86,10 +81,14 @@ export default function Hero() {
         <div className="grid lg:grid-cols-2 gap-16 items-center relative z-10">
           {/* Left Content */}
           <div className="space-y-8 animate-fade-in-up">
+            {/* Status indicator */}
+            <div className="flex items-center space-x-3">
+              <span className="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">Available for work</span>
+            </div>
 
             {/* Main heading */}
             <div className="space-y-4">
-              <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight inline-flex items-center space-x-3">
+              <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight inline-flex items-baseline">
                 <WavingHand />
                 <span>
                   Hi, I'm{" "}
@@ -98,6 +97,7 @@ export default function Hero() {
                   </span>
                 </span>
               </h1>
+
               <h2 className="text-2xl lg:text-3xl text-gray-600 font-medium leading-relaxed">
                 I'm a <TypewriterText texts={typedItems} />
               </h2>
@@ -123,6 +123,22 @@ export default function Hero() {
                 <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
                 <span>Jakarta, ID</span>
               </div>
+            </div>
+
+            {/* CTA Buttons */}
+            <div className="flex space-x-4 pt-4">
+              <a
+                href="#projects"
+                className="px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors duration-200 font-medium"
+              >
+                View Work
+              </a>
+              <a
+                href="#contact"
+                className="px-6 py-3 border border-gray-200 text-gray-700 rounded-lg hover:border-gray-300 transition-colors duration-200 font-medium"
+              >
+                Contact
+              </a>
             </div>
           </div>
 
