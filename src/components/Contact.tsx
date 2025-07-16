@@ -1,4 +1,4 @@
-import { Mail, MessageCircle, Github } from "lucide-react"
+import { Mail, Github } from "lucide-react"
 import {FaLinkedinIn, FaInstagram} from 'react-icons/fa6'
 
 const thisYear = new Date().getFullYear()

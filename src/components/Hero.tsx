@@ -147,7 +147,7 @@ const SpotifyModal = ({
                 {error.includes("403") && (
                   <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-4">
                     <p className="text-sm text-yellow-800">
-                      <strong>Permission Error:</strong> Your access token doesn't have the required permissions. Please
+                      <strong>Permission Error:</strong> Your access token doesn&apos;t have the required permissions. Please
                       reconnect with the proper scopes.
                     </p>
                   </div>
@@ -328,7 +328,7 @@ export default function Hero() {
 
     if (token) {
       setAccessToken(token)
-      
+
       const expiresAt = Date.now() + Number.parseInt(expiresIn || "3600") * 1000
       localStorage.setItem("spotify_token", token)
       localStorage.setItem("spotify_expires_at", expiresAt.toString())
@@ -355,7 +355,7 @@ export default function Hero() {
               <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight inline-flex items-baseline">
                 <WavingHand />
                 <span>
-                  Hi, I'm{" "}
+                  Hi, I&apos;m{" "}
                   <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                     Nicolash
                   </span>
@@ -363,7 +363,7 @@ export default function Hero() {
               </h1>
 
               <h2 className="text-2xl lg:text-3xl text-gray-600 font-medium leading-relaxed">
-                I'm a <TypewriterText texts={typedItems} />
+                I&apos;m a <TypewriterText texts={typedItems} />
               </h2>
             </div>
 
