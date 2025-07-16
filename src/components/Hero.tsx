@@ -345,9 +345,31 @@ export default function Hero() {
   }, [])
 
   return (
-    <section id="home" className="min-h-screen flex items-start pt-52 relative overflow-hidden bg-white">
+    <section id="home" className="min-h-screen flex items-start pt-32 relative overflow-hidden bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full">
         <div className="grid lg:grid-cols-2 gap-16 items-center relative z-10">
+          
+          {/* Right Image */}
+          <div className="relative animate-fade-in-right">
+            <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-gray-100 shadow-xl hover:shadow-2xl transition-all duration-500 relative">
+              <Image
+                src="/image.png?height=500&width=600"
+                alt="Nicolash working on backend systems"
+                fill
+                className="object-cover hover:scale-105 transition-transform duration-500"
+              />
+
+              {/* Floating Spotify Logo */}
+              <button
+                onClick={() => setIsSpotifyOpen(true)}
+                className="absolute bottom-4 left-4 w-14 h-14 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group z-10"
+                title="See what I've been listening to"
+              >
+                <FaSpotify className="w-6 h-6 text-white group-hover:scale-110 transition-transform duration-200" />
+                <div className="absolute -top-2 -right-2 w-4 h-4 bg-green-400 rounded-full animate-pulse"></div>
+              </button>
+            </div>
+          </div>
           {/* Left Content */}
           <div className="space-y-8 animate-fade-in-up">
             {/* Main heading */}
@@ -387,28 +409,6 @@ export default function Hero() {
                 <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
                 <span>Jakarta, ID</span>
               </div>
-            </div>
-          </div>
-
-          {/* Right Image */}
-          <div className="relative animate-fade-in-right">
-            <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-gray-100 shadow-xl hover:shadow-2xl transition-all duration-500 relative">
-              <Image
-                src="/image.png?height=500&width=600"
-                alt="Nicolash working on backend systems"
-                fill
-                className="object-cover hover:scale-105 transition-transform duration-500"
-              />
-
-              {/* Floating Spotify Logo */}
-              <button
-                onClick={() => setIsSpotifyOpen(true)}
-                className="absolute bottom-4 right-4 w-14 h-14 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group z-10"
-                title="See what I've been listening to"
-              >
-                <FaSpotify className="w-6 h-6 text-white group-hover:scale-110 transition-transform duration-200" />
-                <div className="absolute -top-2 -right-2 w-4 h-4 bg-green-400 rounded-full animate-pulse"></div>
-              </button>
             </div>
           </div>
         </div>
