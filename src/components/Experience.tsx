@@ -1,16 +1,20 @@
 "use client"
 
-import { Briefcase, GraduationCap, MapPin} from "lucide-react"
+import { Briefcase, GraduationCap, MapPin, Calendar} from "lucide-react"
 import { useScrollAnimation } from "@/hooks/useScrollAnimation"
 import {TimelineItemType} from "@/types"
+import { useState } from "react" 
 
 export default function Experience() {
   const { ref: sectionRef, isVisible: sectionVisible } = useScrollAnimation()
   const { ref: workRef, isVisible: workVisible } = useScrollAnimation()
   const { ref: educationRef, isVisible: educationVisible } = useScrollAnimation()
 
-  const workExperience = [
-    {
+    const [selectedJob, setSelectedJob] = useState(0)
+    
+    const workExperience = [
+      {
+      id: 0,
       title: "Backend Developer",
       company: "PT Green City Traffic",
       location: "Jakarta, ID",
@@ -24,11 +28,13 @@ export default function Experience() {
       ],
     },
     {
+      id: 1,
       title: "Software Engineer",
       company: "Digital Data Integrasi",
       location: "Jakarta, ID",
       period: "Jan 2024 - Jan 2025",
       type: "work",
+      logo: "sds",
       color: "from-purple-400 to-blue-500",
       achievements: [
         "Built payment processing APIs serving 50+ countries",
@@ -37,6 +43,7 @@ export default function Experience() {
       ],
     },
     {
+      id: 2,
       title: "Backend Developer",
       company: "INA Digital",
       location: "Jakarta, ID",
@@ -50,6 +57,7 @@ export default function Experience() {
       ],
     },
   ]
+  const selectedJobData = workExperience[selectedJob]
 
   const education = [
     {
@@ -164,17 +172,77 @@ export default function Experience() {
             Building scalable backend systems at leading tech companies
           </p>
         </div>
+        <div className="max-w-7xl mx-auto">
+          <div
+            className={`bg-white border border-gray-200 rounded-3xl shadow-lg p-8 transition-all duration-1000 ${
+              workVisible ? "animate-scale-in animate-delay-300" : "opacity-0 translate-y-10"
+            }`}
+          >
+            <div className="grid lg:grid-cols-5 gap-8">
+              {/* Left Sidebar - Job List */}
+              <div className="lg:col-span-2 space-y-4">
+                {workExperience.map((job, index) => (
+                  <div
+                    key={job.id}
+                    onClick={() => setSelectedJob(index)}
+                    className={`p-4 rounded-2xl cursor-pointer transition-all duration-300 ${
+                      selectedJob === index
+                        ? "bg-gradient-to-r from-purple-100 to-blue-100 border border-purple-300"
+                        : "bg-white hover:bg-gray-100 border border-gray-200"
+                    }`}
+                  >
+                    <div className="flex items-center space-x-4">
+                      {/* Company Logo */}
+                      <div
+                        className={`w-12 h-12 bg-gradient-to-br ${job.color} rounded-full flex items-center justify-center text-white font-bold text-sm`}
+                      >
+                        {job.logo}
+                      </div>
 
-        <div className="max-w-4xl mx-auto">
-          {workExperience.map((item, index) => (
-            <TimelineItem
-              key={index}
-              item={item}
-              index={index}
-              isLast={index === workExperience.length - 1}
-              isVisible={workVisible}
-            />
-          ))}
+                      {/* Job Info */}
+                      <div className="flex-1 min-w-0">
+                        <h3 className="text-black font-semibold text-sm truncate">{job.title}</h3>
+                        <p className="text-gray-600 text-sm truncate">{job.company}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Right Panel - Job Details */}
+              <div className="lg:col-span-3">
+                <div className="bg-white rounded-2xl p-6 border border-gray-200">
+                  {/* Job Header */}
+                  <div className="mb-6">
+                    <h3 className="text-2xl font-bold text-black mb-2">{selectedJobData.title}</h3>
+                    <p className="text-gray-700 text-lg mb-3">{selectedJobData.company}</p>
+                    <div className="flex items-center space-x-4 text-sm text-gray-500">
+                      <div className="flex items-center space-x-1">
+                        <Calendar className="w-4 h-4" />
+                        <span>{selectedJobData.period}</span>
+                      </div>
+                      <div className="flex items-center space-x-1">
+                        <MapPin className="w-4 h-4" />
+                        <span>{selectedJobData.location}</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Job Achievements */}
+                  <div className="space-y-4">
+                    {selectedJobData.achievements.map((achievement, index) => (
+                      <div key={index} className="flex items-start space-x-3">
+                        <div
+                          className={`w-2 h-2 bg-gradient-to-r ${selectedJobData.color} rounded-full mt-2 flex-shrink-0`}
+                        ></div>
+                        <p className="text-gray-700 text-sm leading-relaxed">{achievement}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
