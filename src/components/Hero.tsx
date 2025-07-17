@@ -345,7 +345,7 @@ export default function Hero() {
   }, [])
 
   return (
-    <section id="home" className="min-h-screen flex items-start pt-0 md:pt-54 relative overflow-hidden bg-white">
+    <section id="home" className="min-h-screen flex items-start pt-10 md:pt-54 relative overflow-hidden bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full">
         <div className="grid lg:grid-cols-2 gap-16 items-center relative z-10">
           
