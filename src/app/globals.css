@@ -1,7 +1,21 @@
 @import "tailwindcss";
 
-html {
+html, body {
+  margin: 0;
+  padding: 0;
   scroll-behavior: smooth;
+}
+
+html {
+  scroll-padding-top: 0;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 /* Custom scrollbar */
