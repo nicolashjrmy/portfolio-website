@@ -414,7 +414,7 @@ export default function Hero() {
         </div>
 
         {/* Scroll indicator - positioned to be visible at bottom of viewport */}
-        <div className="hidden md:block absolute bottom-4 md:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
+        <div className="hidden md:block absolute bottom-32 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
           <div className="flex flex-col items-center space-y-2">
             <span className="text-sm text-gray-500 font-medium">Scroll to explore</span>
             <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center bg-white/80 backdrop-blur-sm">

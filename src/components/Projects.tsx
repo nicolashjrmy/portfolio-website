@@ -7,7 +7,7 @@ export default function Projects() {
       title: "Expense Splitter App",
       description:
         "App that simplifies expense sharing among friends. Built with Node.js, Express, and mySQL in react-native",
-      image: "/placeholder.svg?height=300&width=500",
+      image: "/tripsplitter.png?height=300&width=500",
       technologies: ["Node.js", "mySQL", "react-native", "Express"],
       features: ["Real-time update and notification", "Authentication", "Still in development"],
       icon: <Server className="w-8 h-8 text-white" />,
@@ -84,7 +84,7 @@ export default function Projects() {
                       className="object-cover group-hover:scale-110 transition-transform duration-700"
                     />
                     {/* Gradient overlay */}
-                    <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-80`}></div>
+                    <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-60`}></div>
 
                     {/* Floating icon */}
                     <div className="absolute top-6 left-6">

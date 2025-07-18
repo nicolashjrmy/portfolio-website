@@ -4,6 +4,8 @@ import { Briefcase, GraduationCap, MapPin, Calendar} from "lucide-react"
 import { useScrollAnimation } from "@/hooks/useScrollAnimation"
 import {TimelineItemType} from "@/types"
 import { useState } from "react" 
+import Image from "next/image"
+import { log } from "console"
 
 export default function Experience() {
   const { ref: sectionRef, isVisible: sectionVisible } = useScrollAnimation()
@@ -20,7 +22,7 @@ export default function Experience() {
       location: "Jakarta, ID",
       period: "Apr 2025 - Present",
       type: "work",
-      color: "from-orange-400 to-red-500",
+      logo: "/ddi.png",
       achievements: [
         "Led development of distributed microservices handling 10M+ requests/day",
         "Reduced API response time by 40% through database optimization",
@@ -34,7 +36,7 @@ export default function Experience() {
       location: "Jakarta, ID",
       period: "Jan 2024 - Jan 2025",
       type: "work",
-      logo: "sds",
+      logo: "/ddi.png",
       color: "from-purple-400 to-blue-500",
       achievements: [
         "Built payment processing APIs serving 50+ countries",
@@ -196,7 +198,7 @@ export default function Experience() {
                       <div
                         className={`w-12 h-12 bg-gradient-to-br ${job.color} rounded-full flex items-center justify-center text-white font-bold text-sm`}
                       >
-                        {job.logo}
+                        <Image src={job.logo ?? "/default-logo.png"} alt={`${job.company} logo`} width={24} height={24} />
                       </div>
 
                       {/* Job Info */}
