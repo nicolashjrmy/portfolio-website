@@ -4,8 +4,6 @@ import { useState, useEffect } from "react"
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
-  const [scrollY, setScrollY] = useState(0)
-  const [scrollDirection, setScrollDirection] = useState("up")
   const [isVisible, setIsVisible] = useState(true)
 
   const navItems = [
@@ -15,28 +13,26 @@ export default function Navigation() {
     { href: "#contact", label: "Contact" },
   ]
 
-  useEffect(() => {
-      const handleScroll = () => {
-        const currentScrollY = window.scrollY
-        const direction = currentScrollY > scrollY ? "down" : "up"
-        
-        setScrollY(currentScrollY)
-        setScrollDirection(direction)
-        
-        // Show nav if at top (hero) or scrolling up
-        if (currentScrollY < 100) {
-          setIsVisible(true)
-        } else if (direction === "up") {
-          setIsVisible(true)
-        } else if (direction === "down") {
-          setIsVisible(false)
-          setIsOpen(false) // Close mobile menu when scrolling down
-        }
-      }
+useEffect(() => {
+  let lastScrollY = 0
 
-      window.addEventListener("scroll", handleScroll)
-      return () => window.removeEventListener("scroll", handleScroll)
-    }, [scrollY])
+  const handleScroll = () => {
+    const currentScrollY = window.scrollY
+    const isScrollingDown = currentScrollY > lastScrollY
+
+    lastScrollY = currentScrollY
+
+    if (currentScrollY < 100 || !isScrollingDown) {
+      setIsVisible(true)
+    } else {
+      setIsVisible(false)
+      setIsOpen(false)
+    }
+  }
+
+  window.addEventListener("scroll", handleScroll)
+  return () => window.removeEventListener("scroll", handleScroll)
+}, [])
 
 
   return (

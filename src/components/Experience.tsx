@@ -5,7 +5,6 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation"
 import {TimelineItemType} from "@/types"
 import { useState } from "react" 
 import Image from "next/image"
-import { log } from "console"
 
 export default function Experience() {
   const { ref: sectionRef, isVisible: sectionVisible } = useScrollAnimation()
