@@ -5,7 +5,6 @@ import { useState, useEffect } from "react"
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
   const [isVisible, setIsVisible] = useState(true)
-  const [darkMode, setDarkMode] = useState(false)
 
   const navItems = [
     { href: "#experience", label: "Experience" },
