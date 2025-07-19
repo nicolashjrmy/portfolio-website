@@ -40,7 +40,7 @@ const TypewriterText = ({ texts }: TypewriterTextProps) => {
   }, [currentIndex, isTyping, texts, displayText])
 
   return (
-    <span className="inline-block text-[#915EFF] font-bold">
+    <span className="inline-block text-indigo-600 font-bold">
       {displayText.split("").map((char, index) => (
         <motion.span key={index} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.1 }}>
           {char}
@@ -374,17 +374,17 @@ export default function Hero() {
           <div className="space-y-8 animate-fade-in-up">
             {/* Main heading */}
             <div className="space-y-4">
-              <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight inline-flex items-baseline">
+              <h1 className="text-4xl lg:text-5xl font-bold text-[#2B2D42] leading-tight inline-flex items-baseline">
                 <WavingHand />
                 <span>
                   Hi, I&apos;m{" "}
-                  <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  <span className="text-indigo-600 bg-clip-text">
                     Nicolash
                   </span>
                 </span>
               </h1>
 
-              <h2 className="text-2xl lg:text-3xl text-gray-600 font-medium leading-relaxed">
+              <h2 className="text-2xl lg:text-3xl text-[#2B2D42] font-medium leading-relaxed">
                 I&apos;m a <TypewriterText texts={typedItems} />
               </h2>
             </div>
@@ -395,16 +395,8 @@ export default function Hero() {
               Currently architecting solutions that handle millions of requests daily.
             </p>
 
-            {/* Tech stack and location */}
-            <div className="flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-8">
-              <div className="flex items-center space-x-3">
-                <div className="flex -space-x-1">
-                  <div className="w-6 h-6 bg-blue-500 rounded-full border-2 border-white"></div>
-                  <div className="w-6 h-6 bg-green-500 rounded-full border-2 border-white"></div>
-                  <div className="w-6 h-6 bg-purple-500 rounded-full border-2 border-white"></div>
-                </div>
-                <span className="text-sm text-gray-500">Node.js • Python • Go</span>
-              </div>
+            {/*location */}
+            <div className="flex flex-end sm:flex-row sm:items-center gap-6 sm:gap-8">
               <div className="flex items-center space-x-2 text-sm text-gray-500">
                 <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
                 <span>Jakarta, ID</span>
