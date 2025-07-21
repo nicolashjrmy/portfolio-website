@@ -18,7 +18,7 @@ export default function Projects() {
     {
       title: "Real-time Analytics Engine",
       description: "High-throughput data processing system using Apache Kafka and ClickHouse for real-time analytics.",
-      image: "/placeholder.svg?height=300&width=500",
+      image: "/test.png?height=300&width=500",
       technologies: ["Python", "Kafka", "ClickHouse", "Kubernetes"],
       features: ["1M+ events/sec", "Real-time processing", "Horizontal scaling"],
       icon: <Zap className="w-8 h-8 text-white" />,

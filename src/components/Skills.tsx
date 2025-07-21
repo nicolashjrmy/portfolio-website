@@ -48,9 +48,6 @@ export default function Skills() {
 
   return (
     <section ref={sectionRef} id="skills" className="py-20 relative overflow-hidden">
-      {/* Subtle background elements */}
-      <div className="absolute top-16 left-16 w-20 h-20 bg-gradient-to-br from-blue-50 to-purple-50 rounded-full opacity-50 animate-float"></div>
-      <div className="absolute bottom-20 right-20 w-16 h-16 bg-gradient-to-br from-green-50 to-blue-50 rounded-full opacity-40 animate-float-delay"></div>
 
       <div className="relative z-10">
         <div

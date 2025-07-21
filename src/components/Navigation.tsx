@@ -53,11 +53,15 @@ export default function Navigation() {
               e.preventDefault()
               window.scrollTo({ top: 0, behavior: "smooth" })
             }}
-            className={`fixed top-8 left-8 z-50 text-2xl font-lightbold text-gray-900 hover:text-gray-600 transition-all duration-300 ${
+            className={`fixed top-6 left-8 z-50 flex items-center justify-center w-14 h-14 text-gray-900 hover:text-gray-600 transition-all duration-300 ${
               isVisible ? "translate-y-0 opacity-100" : "-translate-y-4 opacity-0"
             }`}
           >
-            nicolashjrmy
+            <img 
+              src="/s.png" 
+              alt="Logo" 
+              className="w-24 h-18 hover:opacity-75 transition-opacity duration-300"
+            />
           </a>
 
             {/* Desktop Menu Button */}
@@ -79,9 +83,7 @@ export default function Navigation() {
 
             {/* Mobile menu button */}
           <button
-            className={`md:hidden fixed top-6 right-6 z-50 flex flex-col justify-center items-center w-12 h-12 bg-white/90 backdrop-blur-md border border-gray-200 rounded-full shadow-lg space-y-1 group transition-all duration-300 hover:scale-105 ${
-              isVisible ? "translate-y-0 opacity-100" : "-translate-y-4 opacity-0"
-            }`}
+            className={`md:hidden fixed top-6 right-6 z-50 flex flex-col justify-center items-center w-12 h-12 bg-white/90 backdrop-blur-md border border-gray-200 rounded-full shadow-lg space-y-1 group transition-all duration-300 hover:scale-105`}
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >

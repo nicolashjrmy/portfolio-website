@@ -149,10 +149,6 @@ export default function Experience() {
 
   return (
     <section ref={sectionRef} id="experience" className="py-20 relative overflow-hidden">
-      {/* Subtle background elements */}
-      <div className="absolute top-20 right-20 w-32 h-32 bg-gradient-to-br from-blue-50 to-purple-50 rounded-full opacity-60 animate-float"></div>
-      <div className="absolute bottom-32 left-16 w-24 h-24 bg-gradient-to-br from-green-50 to-blue-50 rounded-full opacity-40 animate-float-delay"></div>
-
       {/* Work Experience */}
       <div ref={workRef} className="mb-24 relative z-10">
         <div
