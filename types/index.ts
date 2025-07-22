@@ -5,6 +5,7 @@ export type TimelineItemType = {
   period: string;
   type: string;
   color: string;
+  logo: string;
   achievements: string[];
 };
 

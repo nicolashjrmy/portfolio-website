@@ -53,9 +53,11 @@ export default function Navigation() {
               e.preventDefault()
               window.scrollTo({ top: 0, behavior: "smooth" })
             }}
-            className={`fixed top-6 left-8 z-50 flex items-center justify-center w-14 h-14 text-gray-900 hover:text-gray-600 transition-all duration-300 ${
-              isVisible ? "translate-y-0 opacity-100" : "-translate-y-4 opacity-0"
-            }`}
+            className={`z-50 flex items-center justify-center w-14 h-14 text-gray-900 hover:text-gray-600 transition-all duration-300
+              fixed top-6 left-8 
+              md:translate-y-0 md:opacity-100 
+              ${isVisible ? "translate-y-0 opacity-100" : "-translate-y-4 opacity-0"}
+            `}
           >
             <img 
               src="/s.png" 

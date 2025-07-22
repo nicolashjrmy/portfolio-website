@@ -13,7 +13,7 @@ export default function Skills() {
       icon: <Code className="w-6 h-6" />,
       color: "from-blue-500 to-cyan-500",
       skills: ["Node.js", "Python", "Go", "TypeScript", "Express.js", "FastAPI", "Gin"],
-    },
+    },  
     {
       title: "Databases",
       icon: <Database className="w-6 h-6" />,
@@ -55,14 +55,10 @@ export default function Skills() {
             sectionVisible ? "animate-fade-in-up" : "opacity-0 translate-y-10"
           }`}
         >
-          <div className="inline-block bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-medium mb-4">
-            TECHNICAL EXPERTISE
-          </div>
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">Skills</span>{" "}
-            & Technologies
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-6">
+           Skills & Technologies
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-slate-600 max-w-3xl mx-auto font-medium leading-relaxed">
             Tools and technologies I use to build robust backend systems
           </p>
         </div>
