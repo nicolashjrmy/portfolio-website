@@ -6,6 +6,7 @@ import { Mail, Github, Send, User, MessageSquare } from "lucide-react"
 import { FaLinkedinIn, FaInstagram } from "react-icons/fa6"
 import { useState } from "react"
 import { useScrollAnimation } from "@/hooks/useScrollAnimation"
+import emailjs from '@emailjs/browser'
 
 const thisYear = new Date().getFullYear()
 
@@ -35,25 +36,32 @@ export default function Contact() {
     setIsSubmitting(true)
 
     try {
-      // Create mailto link with form data
-      const subject = encodeURIComponent(formData.subject || "Contact from Portfolio")
-      const body = encodeURIComponent(
-        `Hi Nicolash,\n\nName: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}\n\nBest regards,\n${formData.name}`,
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || 'undefined'
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || 'undefined'
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || 'undefined'
+
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject || "Contact from Portfolio",
+        message: formData.message,
+      }
+
+      await emailjs.send(
+        serviceId,
+        templateId,
+        templateParams,
+        publicKey
       )
-
-      // Open email client
-      window.location.href = `mailto:nicolashjeremy17@gmail.com?subject=${subject}&body=${body}`
-
-      // Reset form and show success
+      
       setFormData({ name: "", email: "", subject: "", message: "" })
       setSubmitStatus("success")
 
-      // Reset status after 3 seconds
-      setTimeout(() => setSubmitStatus("idle"), 3000)
+      setTimeout(() => setSubmitStatus("idle"), 5000)
     } catch (error) {
-      console.error("Form submission failed:", error);
+      console.error('EmailJS error:', error)
       setSubmitStatus("error")
-      setTimeout(() => setSubmitStatus("idle"), 3000)
+      setTimeout(() => setSubmitStatus("idle"), 5000)
     } finally {
       setIsSubmitting(false)
     }
@@ -232,7 +240,7 @@ export default function Contact() {
                       {isSubmitting ? (
                         <>
                           <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                          <span>Opening Email...</span>
+                          <span>Sending Message...</span>
                         </>
                       ) : (
                         <>
@@ -245,7 +253,7 @@ export default function Contact() {
                     {submitStatus === "success" && (
                       <div className="text-center p-4 bg-green-50 border border-green-200 rounded-lg">
                         <p className="text-green-700 font-medium">
-                          Email client opened! Your message is ready to send.
+                          ✅ Message sent successfully! I&apos;ll get back to you soon.
                         </p>
                       </div>
                     )}
@@ -253,7 +261,7 @@ export default function Contact() {
                     {submitStatus === "error" && (
                       <div className="text-center p-4 bg-red-50 border border-red-200 rounded-lg">
                         <p className="text-red-700 font-medium">
-                          Something went wrong. Please try again or email directly.
+                          ❌ Failed to send message. Please try again or email me directly.
                         </p>
                       </div>
                     )}
