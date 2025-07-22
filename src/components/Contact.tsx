@@ -51,6 +51,7 @@ export default function Contact() {
       // Reset status after 3 seconds
       setTimeout(() => setSubmitStatus("idle"), 3000)
     } catch (error) {
+      console.error("Form submission failed:", error);
       setSubmitStatus("error")
       setTimeout(() => setSubmitStatus("idle"), 3000)
     } finally {
@@ -69,7 +70,7 @@ export default function Contact() {
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-6">Let&apos;s Connect</h2>
             <p className="text-lg text-slate-600 max-w-3xl mx-auto font-medium">
               Interested in backend engineering insights, collaboration opportunities, or just want to chat about
-              technology? Let's start a conversation.
+              technology? Let&apos;s start a conversation.
             </p>
           </div>
 

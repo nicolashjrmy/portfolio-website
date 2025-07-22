@@ -57,15 +57,15 @@ const TypewriterText = ({ texts }: TypewriterTextProps) => {
   )
 }
 
-const Hand = () => {
-  return (
-    <img 
-      src = "/hand.png"
-      alt = "Swipe to explore"
-      className = "w-8 h-8 animate-swipe-motion"  
-    />
-  )
-}
+// const Hand = () => {
+//   return (
+//     <img 
+//       src = "/hand.png"
+//       alt = "Swipe to explore"
+//       className = "w-8 h-8 animate-swipe-motion"  
+//     />
+//   )
+// }
 
 const WavingHand = () => {
   return (
