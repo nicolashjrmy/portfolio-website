@@ -24,9 +24,9 @@ export default function Experience() {
       logo: "/gct.png",
       color: "from-green-400 to-teal-500",
       achievements: [
-        "Led development of distributed microservices handling 10M+ requests/day",
-        "Reduced API response time by 40% through database optimization",
-        "Mentored 5 junior engineers and established code review standards",
+        "Maintain and develop backend application for 1000+ active drivers",
+        "Build real-time stock update system using WebSockets",
+        "Built payment processing APIs for down payments and installments",
       ],
     },
     {
@@ -39,9 +39,9 @@ export default function Experience() {
       logo: "/ddi.png",
       color: "from-purple-400 to-blue-500",
       achievements: [
-        "Built payment processing APIs serving 50+ countries",
-        "Implemented fraud detection system reducing false positives by 25%",
-        "Designed and deployed Kubernetes infrastructure for high availability",
+        "Work on 5+ different projects including fraud detection",
+        "Designed and built mockup web applications for POC demonstrations",
+        "Develop backend services and intregrate it with Neo4j graph db",
       ],
     },
     {
@@ -54,9 +54,9 @@ export default function Experience() {
       logo: "/ina.png",
       color: "from-red-400 to-pink-500",
       achievements: [
-        "Developed e-commerce backend systems for 1M+ merchants",
-        "Optimized database queries improving checkout speed by 30%",
-        "Collaborated with frontend teams on GraphQL API design",
+        "Developed a digital platform that will be used across Indonesia",
+        "Ensuure high availability and scalability of the platform",
+        "Implement elastic search for product observability",
       ],
     },
   ]

@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import { Github, Database, Server, Zap, ArrowUpRight } from "lucide-react"
+import { Github, Database, ReceiptText, Zap, ArrowUpRight } from "lucide-react"
 import { useScrollAnimation } from "@/hooks/useScrollAnimation"
 
 export default function Projects() {
@@ -16,33 +16,34 @@ export default function Projects() {
       image: "/tripsplitter.png",
       technologies: ["Node.js", "mySQL", "react-native", "Express"],
       features: ["Real-time update and notification", "Authentication", "Still in development"],
-      icon: <Server className="w-8 h-8 text-white" />,
+      icon: <ReceiptText className="w-8 h-8 text-white" />,
       color: "from-green-400 to-teal-500",
-      github: "#",
-      demo: "#",
+      github: "https://github.com/nicolashjrmy/react-trip-app",
+      demo: "https://github.com/nicolashjrmy/react-trip-app",
     },
     {
-      title: "Real-time Analytics Engine",
-      description: "High-throughput data processing system using Apache Kafka and ClickHouse for real-time analytics.",
-      image: "/test.png",
-      technologies: ["Python", "Kafka", "ClickHouse", "Kubernetes"],
-      features: ["1M+ events/sec", "Real-time processing", "Horizontal scaling"],
-      icon: <Zap className="w-8 h-8 text-white" />,
-      color: "from-purple-400 to-blue-500",
-      github: "#",
-      demo: "#",
-    },
-    {
-      title: "Multi-tenant SaaS Backend",
-      description: "Scalable multi-tenant architecture with row-level security and automated database migrations.",
-      image: "/placeholder.svg?height=300&width=500",
-      technologies: ["Go", "PostgreSQL", "Docker", "Terraform"],
-      features: ["Multi-tenancy", "Auto-migrations", "Role-based access"],
+      title: "KerjApa",
+      description: "Job portal that integrates with machine learning to match user skills with job vacancies",
+      image: "/kerjapa.png?height=300&width=500",
+      technologies: ["Python", "Torch", "Jupyter Notebook", "Figma"],
+      features: ["Machine Learning", "Loss: 0.2760", "Accuracy: 0.8893"],
       icon: <Database className="w-8 h-8 text-white" />,
-      color: "from-red-400 to-pink-500",
-      github: "#",
-      demo: "#",
+      color: "from-purple-400 to-blue-500",
+      github: "https://github.com/nicolashjrmy/Capstone-Project-KerjApa-",
+      demo: "https://www.figma.com/proto/73c3uhzEqSbm1ZVsH3cgBi/Untitled?node-id=3-3684&starting-point-node-id=3%3A2675&t=IIx7w6hSWccxzMtG-1",
     },
+    {
+      title: "Chatbot with Voice Recognition",
+      description: "Real-time voice recognition (Indonesian) chatbot for Brawijaya Univeristy FAQs",
+      image: "/chatbot.jpeg",
+      technologies: ["Python", "Torch", "Raspberry Pi"],
+      features: ["Real-time processing", "Closed domain chatbot", "Low-cost requirement"],
+      icon: <Zap className="w-8 h-8 text-white" />,
+      color: "from-red-400 to-pink-500", 
+      github: "https://github.com/nicolashjrmy/voice-recognition-chatbot-raspberrypi",
+      demo: "https://j-ptiik.ub.ac.id/index.php/j-ptiik/article/view/13042"
+    },
+
   ]
 
   return (
@@ -71,11 +72,6 @@ export default function Projects() {
                     transitionDelay: `${index * 200}ms`,
                   }}
                 >
-                  {/* Floating background card */}
-                  <div
-                    className={`absolute inset-0 bg-gradient-to-br ${project.color} rounded-3xl transform rotate-1 group-hover:rotate-2 transition-transform duration-500 opacity-5`}
-                  ></div>
-
                   <div className="relative bg-white/80 backdrop-blur-sm border border-slate-200/50 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl hover:bg-white transition-all duration-500 hover:-translate-y-2">
                     {/* Project image */}
                     <div className="relative h-64 overflow-hidden">
@@ -100,14 +96,16 @@ export default function Projects() {
                       {/* Action buttons */}
                       <div className="absolute top-6 right-6 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <a
+                          target="_blank"
                           href={project.github}
-                          className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center hover:bg-white/30 transition-colors"
+                          className="w-10 h-10 bg-black/50 backdrop-blur-sm rounded-xl flex items-center justify-center hover:bg-black/30 transition-colors"
                         >
                           <Github className="w-5 h-5 text-white" />
                         </a>
                         <a
+                          target="_blank"
                           href={project.demo}
-                          className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center hover:bg-white/30 transition-colors"
+                          className="w-10 h-10 bg-black/50 backdrop-blur-sm rounded-xl flex items-center justify-center hover:bg-black/30 transition-colors"
                         >
                           <ArrowUpRight className="w-5 h-5 text-white" />
                         </a>

@@ -12,37 +12,37 @@ export default function Skills() {
       title: "Languages & Frameworks",
       icon: <Code className="w-6 h-6" />,
       color: "from-blue-500 to-cyan-500",
-      skills: ["Node.js", "Python", "Go", "TypeScript", "Express.js", "FastAPI", "Gin"],
+      skills: ["Node.js", "Python", "TypeScript", "Nest.js", "Express.js", "FastAPI", "Go", "React"],
     },  
     {
       title: "Databases",
       icon: <Database className="w-6 h-6" />,
       color: "from-green-500 to-emerald-500",
-      skills: ["PostgreSQL", "MongoDB", "Redis", "ClickHouse", "Elasticsearch", "DynamoDB"],
+      skills: ["PostgreSQL", "MongoDB", "Redis", "MySQL", "Elasticsearch", "Superbase", "Neo4j"],
     },
     {
       title: "Infrastructure & DevOps",
       icon: <Server className="w-6 h-6" />,
       color: "from-purple-500 to-violet-500",
-      skills: ["Docker", "Kubernetes", "Terraform", "Jenkins", "GitHub Actions", "Nginx"],
+      skills: ["Docker", "Jenkins", "GitHub Actions", "Nginx"],
     },
     {
       title: "Cloud Platforms",
       icon: <Cloud className="w-6 h-6" />,
       color: "from-orange-500 to-red-500",
-      skills: ["AWS", "Google Cloud", "Azure", "Vercel", "DigitalOcean", "Heroku"],
+      skills: ["AWS", "Google Cloud", "Vercel"],
     },
     {
       title: "Message Queues",
       icon: <Zap className="w-6 h-6" />,
       color: "from-yellow-500 to-amber-500",
-      skills: ["Apache Kafka", "RabbitMQ", "Redis Pub/Sub", "AWS SQS", "Apache Pulsar"],
+      skills: ["Apache Kafka", "RabbitMQ", "Redis Pub/Sub"],
     },
     {
       title: "Security & Monitoring",
       icon: <Shield className="w-6 h-6" />,
       color: "from-pink-500 to-rose-500",
-      skills: ["OAuth 2.0", "JWT", "Prometheus", "Grafana", "ELK Stack", "Datadog"],
+      skills: ["OAuth 2.0", "JWT", "ELK Stack"],
     },
   ]
 
@@ -117,7 +117,7 @@ export default function Skills() {
                 </p>
 
                 <div className="flex flex-wrap justify-center gap-3">
-                  {["🦀 Rust", "⚡ WebAssembly", "📊 Event Sourcing", "🔗 Blockchain", "🤖 AI/ML APIs"].map(
+                  {["📊 Event Sourcing", "🦫 Go/gRPC", "⚛️ React-Native"].map(
                     (tech, index) => (
                       <div
                         key={index}

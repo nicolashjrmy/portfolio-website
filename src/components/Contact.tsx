@@ -60,7 +60,7 @@ export default function Contact() {
       setTimeout(() => setSubmitStatus("idle"), 5000)
     } catch (error) {
       console.error('EmailJS error:', error)
-      setSubmitStatus("error")
+      setSubmitStatus("error")  
       setTimeout(() => setSubmitStatus("idle"), 5000)
     } finally {
       setIsSubmitting(false)
@@ -68,7 +68,7 @@ export default function Contact() {
   }
 
   return (
-    <section ref={sectionRef} id="contact" className="min-h-screen w-full py-20 relative overflow-hidden">
+    <section ref={sectionRef} id="contact" className="flex flex-col justify-between min-h-[calc(100vh-<headerHeight>px)]">
         <div className="relative z-10">
           <div
             className={`text-center mb-20 transition-all duration-1000 ease-out ${
@@ -272,7 +272,7 @@ export default function Contact() {
           </div>
 
           {/* Footer */}
-          <div className="mt-20 pt-8 border-t border-slate-200/50">
+          <div className="mt-20 pt-8 py-8 border-t border-slate-200/50">
             <div className="max-w-6xl mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
               <div className="flex flex-col md:flex-row justify-between items-center text-sm text-slate-500">
                 <span className="font-medium">© {thisYear} Nicolash Jeremy. All rights reserved.</span>
