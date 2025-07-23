@@ -215,10 +215,10 @@ export default function Navigation() {
           >
             <p className="text-sm font-light text-gray-500 tracking-wide">Get in touch</p>
             <a
-              href="mailto:hello@nicolashjrmy.dev"
+              href="mailto:nicolashjeremy17@gmail.com"
               className="text-sm text-gray-700 hover:text-gray-900 transition-colors duration-300"
             >
-              hello@nicolashjrmy.dev
+              nicolashjeremy17@gmail.com
             </a>
           </div>
         </div>
